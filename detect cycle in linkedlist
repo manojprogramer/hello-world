@@ -27,7 +27,7 @@ public class Solution {
       while(fast != null && fast.next != null)
       {
         slow = slow.next;
-        fast = fast.next.next; // WE ARE INCREMENTING THE FAST VALUE BY EXTRA ONE BECAUSE WHEN EVER WE DIVIDE THE NUMBER BY 1 THAT IS EQUAL TO ZERP (I.E NUMBER OF NODES ARE MAY PRIME, EVEN, OR ODD )
+        fast = fast.next.next; // WE ARE INCREMENTING THE FAST VALUE BY EXTRA ONE BECAUSE WHEN EVER WE DIVIDE THE NUMBER BY 1 THAT IS EQUAL TO ZER0 (I.E NUMBER OF NODES ARE MAY PRIME, EVEN, OR ODD )
         if(slow == fast) return true;
       }
       return false;
