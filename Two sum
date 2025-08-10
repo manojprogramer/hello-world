@@ -1,5 +1,63 @@
-this is hello world
-public static void main(String args[])
-{
-System.out.println("hello world");
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Brute force approach <<<<<<<<<<<<<<<<<<<<<<<
+
+
+class Solution {
+    public int[] twoSum(int nums[], int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target)
+                    return new int[] { i, j };
+            }
+        }
+        return new int[] {};
+    }
 }
+TIME COMPLEXITY : O(N*N)
+SPACE COMPLEXITY : O(1)
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BETTER APPROACH <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++)
+        {
+            int store = target - nums[i];
+            if(map.containsKey(store))
+                return new int[] {map.get(store), i};
+            map.put(nums[i], i);
+
+        }
+        return new int[]{};
+    }
+}
+
+TIME COMPLEXITY : O(N);
+SPACE COMPLEXITY : O(N);
+
+// IF WHEN THE QUESTION IS ASKED IN TERMS OF TRUE OR FALSE TWO POINTER APPROACH WORKS
+
+class Solution {
+    boolean twoSum(int arr[], int target) {
+        Arrays.sort(arr);
+        // code here
+       int low = 0; 
+       int high = arr.length-1;
+       while(low < high)
+       {
+           int store = arr[low]+arr[high];
+           if(store == target) return true;
+           else if(store <  target) low++;
+           else high--;
+       }
+       return false;
+    }
+}
+TIME COMPLEXITY : O(N);
+SPACE COMPLEXITY : O(1);
